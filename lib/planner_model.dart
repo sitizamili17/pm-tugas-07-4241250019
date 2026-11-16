@@ -17,12 +17,12 @@ class TugasKuliah {
   final bool selesai;
 
   TugasKuliah copyWith({bool? selesai}) => TugasKuliah(
-        id: id,
-        judul: judul,
-        mataKuliah: mataKuliah,
-        tenggat: tenggat,
-        selesai: selesai ?? this.selesai,
-      );
+    id: id,
+    judul: judul,
+    mataKuliah: mataKuliah,
+    tenggat: tenggat,
+    selesai: selesai ?? this.selesai,
+  );
 }
 
 /// Pilihan filter pada halaman daftar.
@@ -31,8 +31,8 @@ enum FilterTugas { semua, aktif, selesai }
 /// State bersama. Tidak mengimpor pustaka UI, jadi mudah diuji.
 class PlannerModel extends ChangeNotifier {
   PlannerModel({List<TugasKuliah> awal = const []})
-      : _daftar = List.of(awal),
-        _idBerikut = awal.fold(0, (maks, t) => t.id > maks ? t.id : maks) + 1;
+    : _daftar = List.of(awal),
+      _idBerikut = awal.fold(0, (maks, t) => t.id > maks ? t.id : maks) + 1;
 
   final List<TugasKuliah> _daftar; // privat: hanya diubah lewat method di bawah
   int _idBerikut;
@@ -56,10 +56,10 @@ class PlannerModel extends ChangeNotifier {
 
   /// Daftar yang sudah disaring menurut [filter].
   List<TugasKuliah> saring(FilterTugas filter) => switch (filter) {
-        FilterTugas.semua => daftar,
-        FilterTugas.aktif => daftar.where((t) => !t.selesai).toList(),
-        FilterTugas.selesai => daftar.where((t) => t.selesai).toList(),
-      };
+    FilterTugas.semua => daftar,
+    FilterTugas.aktif => daftar.where((t) => !t.selesai).toList(),
+    FilterTugas.selesai => daftar.where((t) => t.selesai).toList(),
+  };
 
   void tambah({
     required String judul,

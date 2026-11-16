@@ -6,10 +6,10 @@ import 'format.dart';
 import 'planner_model.dart';
 
 String _namaFilter(FilterTugas f) => switch (f) {
-      FilterTugas.semua => 'Semua',
-      FilterTugas.aktif => 'Aktif',
-      FilterTugas.selesai => 'Selesai',
-    };
+  FilterTugas.semua => 'Semua',
+  FilterTugas.aktif => 'Aktif',
+  FilterTugas.selesai => 'Selesai',
+};
 
 class HalamanDaftar extends StatefulWidget {
   const HalamanDaftar({super.key});
@@ -100,9 +100,10 @@ class KartuTugas extends StatelessWidget {
         leading: Checkbox(
           value: tugas.selesai,
           // read di dalam callback: tidak perlu mendengarkan
-          onChanged: (nilai) => context
-              .read<PlannerModel>()
-              .tandaiSelesai(tugas.id, selesai: nilai ?? false),
+          onChanged: (nilai) => context.read<PlannerModel>().tandaiSelesai(
+            tugas.id,
+            selesai: nilai ?? false,
+          ),
         ),
         title: Text(
           tugas.judul,

@@ -63,13 +63,12 @@ class _HalamanFormState extends State<HalamanForm> {
     }
 
     context.read<PlannerModel>().tambah(
-          judul: _judul.text,
-          mataKuliah: _mataKuliah.text,
-          tenggat: tenggat,
-        );
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Tugas ditambahkan')),
+      judul: _judul.text,
+      mataKuliah: _mataKuliah.text,
+      tenggat: tenggat,
     );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Tugas ditambahkan')));
 
     if (context.canPop()) {
       context.pop();
@@ -84,8 +83,9 @@ class _HalamanFormState extends State<HalamanForm> {
   @override
   Widget build(BuildContext context) {
     final tenggat = _tenggat;
-    final labelTanggal =
-        tenggat == null ? 'Pilih tenggat' : tanggalSingkat(tenggat);
+    final labelTanggal = tenggat == null
+        ? 'Pilih tenggat'
+        : tanggalSingkat(tenggat);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Tambah Tugas')),

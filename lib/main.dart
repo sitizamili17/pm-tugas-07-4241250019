@@ -12,12 +12,12 @@ import 'planner_model.dart';
 const Color _warnaSeed = Color(0xFF3F51B5);
 
 void main() => runApp(
-      // Satu PlannerModel untuk seluruh aplikasi, diletakkan di atas MaterialApp.
-      ChangeNotifierProvider(
-        create: (_) => PlannerModel(awal: dataContoh()),
-        child: const PlannerApp(),
-      ),
-    );
+  // Satu PlannerModel untuk seluruh aplikasi, diletakkan di atas MaterialApp.
+  ChangeNotifierProvider(
+    create: (_) => PlannerModel(awal: dataContoh()),
+    child: const PlannerApp(),
+  ),
+);
 
 final _router = GoRouter(
   initialLocation: '/',

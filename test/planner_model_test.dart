@@ -17,18 +17,20 @@ void main() {
     );
   }
 
-  test('tambah menyimpan tugas, memberi id berurutan, dan memberi notifikasi',
-      () {
-    var notifikasi = 0;
-    model.addListener(() => notifikasi++);
+  test(
+    'tambah menyimpan tugas, memberi id berurutan, dan memberi notifikasi',
+    () {
+      var notifikasi = 0;
+      model.addListener(() => notifikasi++);
 
-    tambahContoh('Laporan praktikum', hari: 20);
-    tambahContoh('Kuis Dart', hari: 25);
+      tambahContoh('Laporan praktikum', hari: 20);
+      tambahContoh('Kuis Dart', hari: 25);
 
-    expect(model.total, 2);
-    expect(model.daftar.map((t) => t.id).toList(), [1, 2]);
-    expect(notifikasi, 2);
-  });
+      expect(model.total, 2);
+      expect(model.daftar.map((t) => t.id).toList(), [1, 2]);
+      expect(notifikasi, 2);
+    },
+  );
 
   test('tandaiSelesai memperbarui jumlah dan persentase', () {
     tambahContoh('A', hari: 20);
@@ -69,14 +71,13 @@ void main() {
     model.tandaiSelesai(2, selesai: true);
 
     expect(model.saring(FilterTugas.semua).length, 3);
-    expect(
-      model.saring(FilterTugas.aktif).map((t) => t.judul).toList(),
-      ['A', 'C'],
-    );
-    expect(
-      model.saring(FilterTugas.selesai).map((t) => t.judul).toList(),
-      ['B'],
-    );
+    expect(model.saring(FilterTugas.aktif).map((t) => t.judul).toList(), [
+      'A',
+      'C',
+    ]);
+    expect(model.saring(FilterTugas.selesai).map((t) => t.judul).toList(), [
+      'B',
+    ]);
   });
 
   test('daftar terurut dari tenggat terdekat dan persen 0 saat kosong', () {

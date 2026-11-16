@@ -58,7 +58,9 @@ class HalamanStatistik extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Text('${p.persenSelesai.toStringAsFixed(0)}% tugas sudah selesai'),
+              Text(
+                '${p.persenSelesai.toStringAsFixed(0)}% tugas sudah selesai',
+              ),
             ],
           ),
         ),
