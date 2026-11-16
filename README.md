@@ -39,9 +39,9 @@ flutter analyze
 ## Tangkapan Layar
 <table>
   <tr>
-    <td><img src="screenshots/daftar.jpeg" width="230"><br><sub>Halaman daftar dengan filter dan badge</sub></td>
-    <td><img src="screenshots/form.jpeg" width="230"><br><sub>Form tambah tugas</sub></td>
-    <td><img src="screenshots/statistik.jpeg" width="230"><br><sub>Halaman statistik</sub></td>
+    <td><img src="screenshots/daftar.jpg" width="230"><br><sub>Halaman daftar dengan filter dan badge</sub></td>
+    <td><img src="screenshots/form.jpg" width="230"><br><sub>Form tambah tugas</sub></td>
+    <td><img src="screenshots/statistik.jpg" width="230"><br><sub>Halaman statistik</sub></td>
   </tr>
 </table>
 
